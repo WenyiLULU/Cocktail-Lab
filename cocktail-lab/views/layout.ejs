@@ -9,8 +9,19 @@
   </head>
 
   <body>
+    <nav>
+      <div><a href="/">HOME</a></div>
+      <div>
+        <a href="/auth/signup">Signup</a>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/logout">Logout</a>
+      </div>
+    </nav>
     <%- body %>
-
+    <footer>
+      <p><%= appTitle %> </p>
+      <p>Kat & LU</p>
+    </footer>
     <script src="/js/script.js"></script>
   </body>
 </html>

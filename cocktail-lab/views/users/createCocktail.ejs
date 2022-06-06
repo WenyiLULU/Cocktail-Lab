@@ -1,0 +1,41 @@
+<h1>Create new Cocktail</h1>
+<div id="form">
+    <form id="input-form" action="/user/create-cocktail" method="POST">
+   
+      <label> Name of your Cocktail
+        <input type="text" name="name" placeholder="Please give a nice name for your Cocktail" required/>
+      </label>
+
+      <label> Category
+        <select name="category">
+            <option value="">--Please choose an option--</option>
+            <option value="Alcoholic">Alcoholic</option>
+            <option value="No-Alcoholic">No-Alcoholic</option>
+        </select>
+      </label>
+
+      <div id="add-ingredients">
+        <div>
+          <label> Ingredient
+            <input type="text" name="ingredient" required/>
+          </label>
+          <label> Amount
+            <input type="text" name="amount" required/>
+          </label>
+        </div>
+      </div>
+      <button id="add-ingredient" type="button">One more ingredient</button>
+
+      <label for="steps"> Preparations & Recommendations</label>
+        <textarea name="steps" rows="10"cols="50" placeholder="Please write your sugestion of preparing and consuming thins cocktail. (^_^)"></textarea>
+      
+  
+      <% if(typeof errorMessage !== 'undefined') { %>
+        <p class="error"><%= errorMessage %></p>
+      <% } %>
+  
+      <button type="submit">Create</button>
+   
+    </form>
+    
+  </div>
