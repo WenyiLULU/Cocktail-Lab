@@ -23,10 +23,10 @@ router.post("/signup", async (req, res) => {
       const newUser = await User.create({
         username,
         email,
-        password: passwordHashed,
+        passwordHash: passwordHashed,
       });
       console.log("new user", newUser);
-      res.redirect("/login");
+      res.redirect("/auth/login");
     } catch (error) {
       if (error instanceof mongoose.Error.ValidationError) {
         res.status(500).render("auth/signup", { errorMessage: error.message });
