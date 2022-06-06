@@ -3,19 +3,24 @@
     <div>
         <h2>Alcoholic</h2>
         <div class="cocktailList">
-            <div>Cocktail 1</div>
-            <div>Cocktail 2</div>
-            <div>Cocktail 3</div>
-            <div>Cocktail 4</div>
+            <% cocktailAlcToShow.forEach(({name, image}) => { %>
+                <div>
+                    <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
+                    <h3><%= name %></h3>                    
+                </div>
+            <% }) %>
+            
         </div>
     </div>
     <div>
         <h2>No Alcoholic</h2>
         <div class="cocktailList">
-            <div>Cocktail 1</div>
-            <div>Cocktail 2</div>
-            <div>Cocktail 3</div>
-            <div>Cocktail 4</div>
+            <% cocktailNAlcToShow.forEach(({name, image}) => { %>
+                <div>
+                    <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
+                    <h3><%= name %></h3>                    
+                </div>
+            <% }) %>
         </div>
     </div>
 </div>
