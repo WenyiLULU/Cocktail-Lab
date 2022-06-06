@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
-
 const Cocktail = require("./Cocktail.model.js")
-
 
 const userSchema = new Schema(
   {

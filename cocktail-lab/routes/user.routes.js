@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
 
 router.get("/create-cocktail", //:middleware//, 
     (req, res, next) =>{
-    res.render("user/createCocktail");     
+    res.render("users/createCocktail");     
 })
 router.post("/create-cocktail", //:middleware//, 
     async(req, res, next) =>{    
