@@ -14,6 +14,11 @@ nav{
   display: flex;
   justify-content: space-between;
 }
+nav div{
+  padding: 0 15px;
+  display: flex;
+
+}
 footer {
   height: 40px;
   background-color: navy;
@@ -23,7 +28,7 @@ footer {
   width: 100vw;
   display: flex;
 }
-form{
+#input-form{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -31,7 +36,7 @@ form{
   height: 100vh;
 }
  
-form input, select{
+#input-form input, select{
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -39,7 +44,7 @@ form input, select{
   width: 50%;
   margin-bottom: 20px;
 }
-form button{
+#input-form button{
   width: 200px;
   margin: 20px 0;
 }

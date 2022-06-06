@@ -12,9 +12,13 @@
     <nav>
       <div><a href="/">HOME</a></div>
       <div>
-        <a href="/auth/signup">Signup</a>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/logout">Logout</a>
+        <div><a href="/auth/signup">Signup</a></div>
+        <div><a href="/auth/login">Login</a></div>
+        <div><a href="/user/profile">Profile</a></div>
+        <form id="logout-form" action="/auth/logout" method="POST">
+          <button>Logout</button>
+        </form>
+        
       </div>
     </nav>
     <%- body %>
