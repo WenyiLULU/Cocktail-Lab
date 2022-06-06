@@ -1,4 +1,6 @@
 const { Schema, model } = require("mongoose");
+const Cocktail = require("./Cocktail.model.js")
+
 const userSchema = new Schema(
   {
     username: {
@@ -18,9 +20,9 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-    myRecipes: {
-      type: Schema.Types.ObjectId, ref: Cocktail
-    },
+    // myRecipes: {
+    //   type: Schema.Types.ObjectId, ref: Cocktail
+    // },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

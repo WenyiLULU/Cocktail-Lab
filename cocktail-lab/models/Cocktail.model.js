@@ -15,7 +15,7 @@ const cocktailSchema = new Schema(
         enum: ["Alcoholic", "No-Alcoholic"]
     },
     author :{ type: Schema.Types.ObjectId, ref: User },
-    ingredients: {type: Array, default: []},
+    ingredients: [{ingredient: {type: String}, amount: {type: String}}],
     steps: {type: String},
     image: {type: String},
     

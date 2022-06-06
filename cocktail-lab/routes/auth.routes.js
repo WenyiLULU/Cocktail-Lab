@@ -7,7 +7,7 @@ const User= require("../models/User.model.js");
 const { default: mongoose } = require('mongoose');
 
 // require auth middleware
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
+const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
 
 /* GET home page */
 router.get("/signup", (req, res) => {
