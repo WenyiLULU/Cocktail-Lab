@@ -2,16 +2,20 @@ const router = require("express").Router();
 
 const Cocktail = require("../models/Cocktail.model.js");
 
+const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
+
+
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("user/profile"); // to do: change view page with Kat
+router.get("/profile", isLoggedIn, (req, res, next) => {
+    
+    res.render("users/profile", { userInSession: req.session.currentUser}); 
 });
 
-router.get("/create-cocktail", //:middleware//, 
+router.get("/create-cocktail", isLoggedIn, 
     (req, res, next) =>{
     res.render("users/createCocktail");     
 })
-router.post("/create-cocktail", //:middleware//, 
+router.post("/create-cocktail", isLoggedIn, 
     async(req, res, next) =>{    
     const {name, category, ingredient, amount, steps} = req.body
     let ingredients = [];
