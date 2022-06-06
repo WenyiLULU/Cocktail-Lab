@@ -10,7 +10,7 @@ const User= require("../models/User.model.js");
 // require auth middleware
 const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
 
-/* GET home page */
+/* GET signup page */
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
 });
@@ -18,6 +18,20 @@ router.get("/signup", (req, res) => {
 router.post("/signup", async (req, res) => {
     try {
       const { username, email, password } = req.body;
+
+      if (!username || !email || !password) {
+        res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
+        return;
+      }
+
+      const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+      if (!regex.test(password)) {
+        res
+          .status(500)
+          .render('auth/signup', { errorMessage: 'Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.' });
+        return;
+      }
+
       const salt = await bcryptjs.genSaltSync(saltRounds);
       const passwordHashed = await bcryptjs.hashSync(password, salt);
       
