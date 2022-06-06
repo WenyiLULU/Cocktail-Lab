@@ -64,7 +64,7 @@ router.post('/login', (req, res, next) => {
     // with the hashed password in database
        else if (bcryptjs.compareSync(password, user.passwordHash)) {
       // if the two passwords match, render profile.ejs and
-      // res.render('users/user-profile', { user });
+      //  res.render('users/profile', { user });
                 //*** SAVE THE USER IN THE SESSION ****
       req.session.currentUser = user;
       res.redirect('/profile');
