@@ -17,7 +17,7 @@ const cocktailSchema = new Schema(
     author :{ type: Schema.Types.ObjectId, ref: User },
     ingredients: [{ingredient: {type: String}, amount: {type: String}}],
     steps: {type: String},
-    image: {type: String},
+    image: {type: String, default: '../public/images/martini-glass2.jpg'},
     
   },
   {

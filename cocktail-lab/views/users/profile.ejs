@@ -2,14 +2,13 @@
 <% if(userInSession) { %>
   <h2>Welcome, <%= userInSession.username %>!</h2>
   <p>This is your profile page!</p>
+  <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 400px;"/>
+
   <button>
-    <a href="/profile">Reload the page</a>
+    <a href="/">Home page</a>
   </button>
   <button>
-    <a href="/">Main page</a>
-  </button>
-  <button>
-    <a href="/create">Create new Cocktail</a>
+    <a href="/user/create-cocktail">Create new Cocktail</a>
   </button>
 <% } else { %>
   <br><p>You are not logged in, sorry!</p>
