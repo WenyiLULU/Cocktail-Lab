@@ -1,24 +1,24 @@
 <h1>Cocktail Lab</h1>
-<div>
-    <div>
+<div id="cocktail-poster">
+    <div class="cocktail-card">
         <h2>Alcoholic</h2>
         <div class="cocktailList">
-            <% cocktailAlcToShow.forEach(({name, image}) => { %>
+            <% cocktailAlcToShow.forEach(({id, name, image}) => { %>
                 <div>
                     <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
-                    <h3><%= name %></h3>                    
+                    <h3><a href="/details/<%= id %>"><%= name %></a></h3>                    
                 </div>
             <% }) %>
             
         </div>
     </div>
-    <div>
+    <div class="cocktail-card">
         <h2>No Alcoholic</h2>
         <div class="cocktailList">
-            <% cocktailNAlcToShow.forEach(({name, image}) => { %>
+            <% cocktailNAlcToShow.forEach(({id, name, image}) => { %>
                 <div>
                     <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
-                    <h3><%= name %></h3>                    
+                    <h3><a href="/details/<%= id %>"><%= name %></a></h3>                                        
                 </div>
             <% }) %>
         </div>
