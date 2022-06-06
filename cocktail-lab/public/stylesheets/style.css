@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -9,4 +9,40 @@ a {
 
 h1 {
   color: 15px;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+}
+footer {
+  height: 40px;
+  background-color: navy;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+}
+form{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  height: 100vh;
+}
+ 
+form input, select{
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+form button{
+  width: 200px;
+  margin: 20px 0;
+}
+#add-ingredients input{
+  width: 40%
 }

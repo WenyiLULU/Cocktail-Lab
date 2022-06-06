@@ -1,0 +1,16 @@
+<p>This is your profile page!</p>
+<% if(userInSession) { %>
+  <h2>Welcome, <%= userInSession.username %>!</h2>
+  <p>This is your profile page!</p>
+  <button>
+    <a href="/profile">Reload the page</a>
+  </button>
+  <button>
+    <a href="/">Main page</a>
+  </button>
+  <button>
+    <a href="/create">Create new Cocktail</a>
+  </button>
+<% } else { %>
+  <br><p>You are not logged in, sorry!</p>
+<% } %>
