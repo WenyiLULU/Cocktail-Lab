@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   padding: 50px 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -51,82 +50,13 @@ footer {
   grid-gap: 20px;
   
 }
-
-#input-form{
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  width: 70vw;
-  height: 100vh;
-}
- 
-#input-form input, select{
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 50%;
-  margin-bottom: 20px;
-}
-#input-form button{
-  width: 200px;
-  margin: 20px 0;
-}
-#add-ingredients input{
-  width: 40%
-}
-=======
-body {
-  padding: 50px 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-nav{
-  display: flex;
-  justify-content: space-between;
-}
-nav div{
-  padding: 0 15px;
-  display: flex;
-
-}
-footer {
-  height: 40px;
-  background-color: navy;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  display: flex;
-}
-
-#cocktail-poster{
-  padding: 100px;
-  display: flex;
-  justify-content: space-around;
-}
-.cocktail-card{
-  border: 2px solid navy;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.cocktailList{
+.all-cocktailList{
+  margin: 20px auto;
   padding: 20px;
-  width: 40vw;
+  width: 80vw;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  
 }
 
 #input-form{
@@ -178,4 +108,3 @@ footer {
   
 }
 
->>>>>>> main

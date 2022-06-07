@@ -14,5 +14,11 @@ router.get("/details/:id", async (req, res) => {
   const {name, category, ingredients, image, id} = cocktailOnClick
   res.render("users/details-public",{name, category, ingredients, image, id})
 })
+router.get("/list/:category", async (req, res) => {
+  const categories = ["Non alcoholic", "Alcoholic"]
+  const categoryChoosed = categories[req.params.category]
+  const cocktailList = await Cocktail.find({category: categoryChoosed})
+  res.render('users/all-cocktails',{cocktailList,categoryChoosed})
+})
 
 module.exports = router;
