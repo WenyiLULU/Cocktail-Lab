@@ -1,7 +1,10 @@
 <h1>Create new Cocktail</h1>
 <div id="form">
-    <form id="input-form" action="/user/create-cocktail" method="POST">
-   
+
+    
+
+    <form id="input-form" action="/user/create-cocktail" method="POST" enctype="multipart/form-data">
+      <input type="file" name="receta-img">
       <label> Name of your Cocktail
         <input type="text" name="name" placeholder="Please give a nice name for your Cocktail" required/>
       </label>
@@ -10,7 +13,7 @@
         <select name="category">
             <option value="">--Please choose an option--</option>
             <option value="Alcoholic">Alcoholic</option>
-            <option value="No-Alcoholic">No-Alcoholic</option>
+            <option value="Non alcoholic">Non Alcoholic</option>
         </select>
       </label>
 

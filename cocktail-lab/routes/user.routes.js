@@ -4,6 +4,7 @@ const Cocktail = require("../models/Cocktail.model.js");
 
 const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
 
+const fileUploader = require("../config/cloudinary.config")
 
 /* GET home page */
 router.get("/profile", isLoggedIn, async (req, res, next) => {
@@ -18,11 +19,12 @@ router.get("/create-cocktail", isLoggedIn,
     (req, res, next) =>{
     res.render("users/createCocktail");     
 })
-router.post("/create-cocktail", isLoggedIn, 
+router.post("/create-cocktail", isLoggedIn, fileUploader.single("receta-img"),
     async(req, res, next) =>{    
     const {name, category, ingredient, amount, steps} = req.body
     const userInSession = req.session.currentUser
-    //console.log(userInSession)
+    console.log('req.body :', req.body)
+    console.log('req.file.path :',req.file)
     let ingredients = [];
     for(let i=0; i<ingredient.length; i+=1){
         ingredients.push({ingredient:ingredient[i], amount:amount[i]})
@@ -33,9 +35,10 @@ router.post("/create-cocktail", isLoggedIn,
         category,
         ingredients: ingredients,
         author: userInSession._id,
-        steps
+        steps,
+        image: req.file.path
     })
-    //console.log('New cocktail:',newCocktail)
+    console.log('New cocktail:',newCocktail)
     res.redirect("/");   
 })
 
