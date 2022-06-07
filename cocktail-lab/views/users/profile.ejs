@@ -1,25 +1,39 @@
 <p>This is your profile page!</p>
+
 <% if(userInSession) { %>
   <h2>Welcome, <%= userInSession.username %>!</h2>
-  <p>This is your profile page!</p>
-  <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 400px;"/>
-  <div class="cocktail-card">
-    <div class="cocktailList">
+
+  <div class="profile-divs">
+  <div class="profile-card">
+    <div class="profileList">
+    <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 400px;"/>
+    </div>
+    <button>
+      <a href="/user/create-cocktail">Create new Cocktail</a>
+    </button>
+  </div>
+
+  <div class="profile-card">
+    <h2>Your cocktail recipes:</h2>
+    <div class="profileList">
         <% cocktailList.forEach(({id, name, image}) => { %>
             <div>
-                <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
+                <div><img src="<%= image %> " alt="Cocktail Image" height="100px"></div>
                 <h3><a href="/user/details-private/<%= id %>"><%= name %></a></h3>                    
             </div>
         <% }) %>
-        
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <h2>Your Likes:</h2>
+    <div class="profileList">
+
     </div>
 </div>
-  <button>
-    <a href="/">Home page</a>
-  </button>
-  <button>
-    <a href="/user/create-cocktail">Create new Cocktail</a>
-  </button>
+</div>
+
+
 <% } else { %>
   <br><p>You are not logged in, sorry!</p>
 <% } %>
