@@ -23,22 +23,33 @@ router.post("/create-cocktail", isLoggedIn, fileUploader.single("receta-img"),
     async(req, res, next) =>{    
     const {name, category, ingredient, amount, steps} = req.body
     const userInSession = req.session.currentUser
-    console.log('req.body :', req.body)
-    console.log('req.file.path :',req.file)
+    //console.log('req.body :', req.body)
+    //console.log('req.file.path :',req.file)
     let ingredients = [];
     for(let i=0; i<ingredient.length; i+=1){
         ingredients.push({ingredient:ingredient[i], amount:amount[i]})
     }
     //console.log("new cocktail input ==>>>", {name, category, ingredient, amount, steps}) 
-    const newCocktail = await Cocktail.create({
-        name,
-        category,
-        ingredients: ingredients,
-        author: userInSession._id,
-        steps,
-        image: req.file.path
-    })
-    console.log('New cocktail:',newCocktail)
+    if(req.file){
+        const newCocktail = await Cocktail.create({
+            name,
+            category,
+            ingredients: ingredients,
+            author: userInSession._id,
+            steps,
+            image: req.file.path
+        })
+    }else{
+        const newCocktail = await Cocktail.create({
+            name,
+            category,
+            ingredients: ingredients,
+            author: userInSession._id,
+            steps
+        })
+        console.log('New cocktail:',newCocktail)
+    }
+    
     res.redirect("/");   
 })
 
