@@ -3,7 +3,17 @@
   <h2>Welcome, <%= userInSession.username %>!</h2>
   <p>This is your profile page!</p>
   <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 400px;"/>
-
+  <div class="cocktail-card">
+    <div class="cocktailList">
+        <% cocktailList.forEach(({id, name, image}) => { %>
+            <div>
+                <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
+                <h3><a href="/user/details-private/<%= id %>"><%= name %></a></h3>                    
+            </div>
+        <% }) %>
+        
+    </div>
+</div>
   <button>
     <a href="/">Home page</a>
   </button>
