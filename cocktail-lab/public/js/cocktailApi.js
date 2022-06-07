@@ -4,7 +4,7 @@ const Cocktail = require("../../models/Cocktail.model.js");
 
 require("../../db/index.js")
 
-const basicCocktail = ["mojito", "margarita", "Long Island Tea", "Sex on the Beach","Winter Paloma","sangria"]
+const basicCocktail = ["mojito", "margarita", "Long Island Tea", "Sex on the Beach","Winter Paloma","sangria","Alice Cocktail", "Banana Cantaloupe Smoothie", "Banana Strawberry Shake Daiquiri","Egg Cream","Just a Moonmint","Kiwi Papaya Smoothie"]
 
 let apiUrl
 
@@ -15,7 +15,7 @@ function getCocktailByName(){
         .get(apiUrl)
         .then(responseFromAPI => {
             let data = responseFromAPI.data.drinks[0]
-            let {strDrink, strAlcoholic,strInstructions,strImageSource} = data
+            let {strDrink, strAlcoholic,strInstructions,strDrinkThumb} = data
             let ingredients = []
             for (let i=1; i<16; i+=1){
                 if(data[`strIngredient${i}`]!== null){
@@ -30,7 +30,7 @@ function getCocktailByName(){
                 category: strAlcoholic,
                 ingredients: ingredients,
                 steps :strInstructions,
-                image : strImageSource
+                image : strDrinkThumb
                 })
                 .then(newCocktail => console.log("Basic cocktail created", newCocktail))
                 .catch(err => console.log("Error creating cocktails", err))

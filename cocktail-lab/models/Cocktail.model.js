@@ -12,12 +12,12 @@ const cocktailSchema = new Schema(
     category: {
         type: String,
         required: true,
-        enum: ["Alcoholic", "No-Alcoholic"]
+        enum: ["Alcoholic", "Non alcoholic"]
     },
     author :{ type: Schema.Types.ObjectId, ref: User },
     ingredients: [{ingredient: {type: String}, amount: {type: String}}],
     steps: {type: String},
-    image: {type: String, default: '../public/images/martini-glass2.jpg'},
+    image: {type: String},
     
   },
   {
