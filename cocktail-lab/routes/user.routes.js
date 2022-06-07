@@ -32,6 +32,20 @@ router.post("/create-cocktail", isLoggedIn,
     //console.log(newCocktail)
     res.redirect("/");   
 })
+
+// private profile
+// router.get("/details-private", isLoggedIn, 
+//     (req, res, next) =>{
+//     res.render("users/details-private");     
+// })
+
+router.get("/details-private/:id", isLoggedIn, async (req, res) => {
+    const cocktailOnClick = await Cocktail.findById(req.params.id)
+    const {name, category, ingredients, image, steps} = cocktailOnClick
+    res.render("users/details-private",{name, category, ingredients, image, steps})
+  })
+
+
 module.exports = router;
 
 // // for "main" profile page:

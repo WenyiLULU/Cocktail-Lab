@@ -1,11 +1,12 @@
 <h1>Detail for public</h1> 
 <div class="cocktail-card">
     <h2><%= name %></h2>
+    <h3><%= category %></h3>
     <div><img src="<%= image %>" %></div>
     <ul>
         <% ingredients.forEach(element => { %>
             <li><%= element.ingredient %> </li>
         <% }) %>
     </ul>
-    <button><a href="/auth/login">Login for more infomations</a></button>
+    <button><a href="/user/details-private/<%= id %>">See more infomation</a></button>
 </div>

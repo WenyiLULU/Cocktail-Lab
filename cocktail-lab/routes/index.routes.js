@@ -11,8 +11,8 @@ router.get("/", async (req, res, next) => {
 });
 router.get("/details/:id", async (req, res) => {
   const cocktailOnClick = await Cocktail.findById(req.params.id)
-  const {name, category, ingredients, image} = cocktailOnClick
-  res.render("users/details-public",{name, category, ingredients, image})
+  const {name, category, ingredients, image, id} = cocktailOnClick
+  res.render("users/details-public",{name, category, ingredients, image, id})
 })
 
 module.exports = router;
