@@ -1,13 +1,11 @@
-<h2>Edit Your Cocktail</h2>
+<h1>Edit Your Cocktail</h1>
 
 <form action="/user/edit/<%= cocktail.id %>" method="POST" enctype="multipart/form-data" class="input-form">
-  <label
-    >Name:
+  <label for="name">Name of the cocktail:</label>
     <input type="text" name="name" value="<%= cocktail.name %>" />
-  </label>
+  
 
-  <label
-    >Category:
+  <label for="category" >Category:</label>
     <!--<input type="text" name="category" value="<%= cocktail.category %>" />-->
     <select name="category">
       <option value="">--Please choose an option--</option>
@@ -18,8 +16,7 @@
         selected
        <% } %>>Non Alcoholic</option>
     </select>
-  </label>
-
+  
   <label> Upload a different image
     <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png">
   </label>
@@ -30,24 +27,24 @@
   <label
     >Ingredients:
     <div class="add-ingredients">
-    
       <% cocktail.ingredients.forEach(element => { %>
-          <label> Ingredient: 
-            <input type="text" name="ingredient" value="<%= element.ingredient %>" />
-          </label>
-          <label> Amount: 
-            <input type="text" name="amount" value="<%= element.amount %>" />
-          </label>
+          <div>
+            <label> Ingredient: 
+              <input type="text" name="ingredient" value="<%= element.ingredient %>" />
+            </label>
+            <label> Amount: 
+              <input type="text" name="amount" value="<%= element.amount %>" />
+            </label>
+          </div>    
       <% }) %> 
     </div>  
     
     <button class="add-ingredient" type="button">Add another ingredient</button>
   </label>
 
-  <label
-    >Steps:
+  <label for="steps"> Preparations & Recommendations</label>
     <textarea type="text" name="steps" rows="10"cols="50"><%= cocktail.steps %></textarea>
-  </label>
+  
 
   <button type="submit">Update</button>
 </form>

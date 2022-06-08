@@ -4,17 +4,18 @@ body {
   font-family: 'Dekko';
   font-size: 22px;
   background-color: #4BC0C8; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to top,#833ab4, #833ab4, #fcb045, #4BC0C8, white)
+  background-image: linear-gradient(to bottom,#6A82FB,#FC5C7D)
 }
 
 a {
-  color: #00b7ff;
+  color: white;
   text-decoration: none;
 }
 
 h1 {
   margin-top: 80px;
-  color: 15px;
+  color: white;
+  text-shadow: 4px 4px #666 ;
 }
 nav{
   padding: 0 20px;
@@ -53,10 +54,17 @@ h1{
 #home h3{
   margin:20px 0;
 }
+.home-divs{
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 footer {
   padding-left: 50px;
   height: 50px;
-  background-color: #421d5a;
+  background-color: #6A82FB;
   color: white;
   font-size: 20px;
   position: fixed;
@@ -64,6 +72,10 @@ footer {
   width: 100vw;
   display: flex;
   align-items: center;
+  opacity:0;
+}
+footer:hover{
+  opacity:1.0;
 }
 
 #cocktail-poster{
@@ -130,13 +142,12 @@ footer {
   grid-gap: 20px;
 }
 
-
 .input-form{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  width: 70vw;
-  /* height: 100vh; */
+  width: 60%;
+  
 }
  
 .input-form input, select{
@@ -152,17 +163,18 @@ footer {
   margin: 20px 0;
 }
 .add-ingredients input{
-  width: 40%
+  width: 60%
 }
 .add-ingredients{
   display: flex;
   flex-direction: column;
 }
-.edit-ingredients{
+.add-ingredients div{
   display: flex;
   flex-direction: row;
 }
 .preview{
+  margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   color: #666;
   text-align: center;
@@ -177,8 +189,10 @@ footer {
 .profile-divs {
   padding: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
+
 
 .profile-card{
   border: 2px solid navy;
@@ -192,7 +206,7 @@ footer {
 .profileList {
   padding: 20px;
   width: 28vw;
-  height: 400px;
+  /*height: 400px;*/
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;  
@@ -211,7 +225,8 @@ footer {
 }
  
 .login-form input,
-.login-form button {
+.login-form button,
+.input-form button {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -220,7 +235,7 @@ footer {
   margin-bottom: 20px;
 }
  
-.login-form button {
+.login-form button, .input-form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 10px;
@@ -235,8 +250,30 @@ footer {
   width: 100%;
 }
  
-.login-form button:hover {
+.login-form button,
+.input-form button:hover {
   background: #fff;
   color: #43a3e6;
   transition: 0.3s ease background;
+}
+
+.profile-head{
+  margin-bottom: 20px;
+  background-image: url("https://res.cloudinary.com/cocktail-lab/image/upload/v1654701350/Cocktail-Lab/drinks1_hqwmmn.jpg");
+  background-repeat: no-repeat;
+  background-size:  cover;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.welcome {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.welcome p{
+  font-size: 50px;
 }
