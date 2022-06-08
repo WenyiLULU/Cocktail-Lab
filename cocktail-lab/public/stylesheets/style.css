@@ -1,46 +1,96 @@
 body {
-  padding: 50px 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin:0;
+  font-family: 'Dekko';
+  font-size: 22px;
+  background-color: #4BC0C8; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top,#833ab4, #833ab4, #fcb045, #4BC0C8, white)
 }
 
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 
 h1 {
+  margin-top: 80px;
   color: 15px;
 }
 nav{
+  padding: 0 20px;
+  height: 100px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 nav div{
+  margin: 20px 10px 0 0;
   padding: 0 15px;
   display: flex;
-
+  align-items: center;
+}
+nav a{
+  text-decoration: none;
+}
+nav button{
+  margin-right: 20px;
+  background-color: #4BC0C8;
+  font-size: 20px;
+  color: white;
+  height: 30px;
+  width: 100px;
+  border-radius: 15px;
+}
+h1{
+  margin: 50px 0 20px 0;
+  text-align: center;
+}
+#home{
+  display: flex;
+  align-items: flex-end;
+}
+#home h3{
+  margin:20px 0;
 }
 footer {
-  height: 40px;
+  padding-left: 50px;
+  height: 50px;
   background-color: navy;
   color: white;
+  font-size: 20px;
   position: fixed;
   bottom: 0;
   width: 100vw;
   display: flex;
+  align-items: center;
 }
 
 #cocktail-poster{
-  padding: 100px;
+  padding: 30px 50px 80px 50px;
   display: flex;
   justify-content: space-around;
 }
 .cocktail-card{
-  border: 2px solid navy;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+.cocktail-card button{
+  margin-right: 20px;
+  background-color: #4BC0C8;
+  font-size: 20px;
+  color: white;
+  height: 35px;
+  width: 300px;
+  border-radius: 15px;
+}
+.cocktail-card button a{
+  color: white;
 }
 .cocktailList{
   padding: 20px;
@@ -50,6 +100,36 @@ footer {
   grid-gap: 20px;
   
 }
+.polaroid {
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+.polaroid img{
+  border-radius: 10px 10px 0 0;
+}
+.container {
+  height: 50px;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: black;
+}
+.container a{
+  color: black;
+}
+
+.all-cocktailList{
+  margin: 20px auto;
+  padding: 20px;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
 
 #input-form{
   margin: 0 auto;
@@ -96,7 +176,8 @@ footer {
   height: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 20px;  
   
 }
+
 

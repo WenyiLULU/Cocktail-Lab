@@ -1,0 +1,9 @@
+<h1>Here's all <%= categoryChoosed %> Cocktail</h1>
+<div class="all-cocktailList">
+    <% cocktailList.forEach(({id, name, image}) => { %>
+        <div>
+            <div><img src="<%= image %> " alt="Cocktail Image" height="200px"></div>
+            <h3><a href="/details/<%= id %>"><%= name %></a></h3>                                        
+        </div>
+    <% }) %>
+</div>
