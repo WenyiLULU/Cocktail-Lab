@@ -17,37 +17,33 @@
        <% } %>>Non Alcoholic</option>
     </select>
   
-  <label> Upload a different image
-    <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png">
-  </label>
+  <label for="receta-img" class="add-image"> Upload a different image: </label>
+    <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png" style="display:none;">
+  
   <div class="preview">
     <p>Please choose an image</p>
   </div>
-
-  <label
-    >Ingredients:
-    <div class="add-ingredients">
-      <% cocktail.ingredients.forEach(element => { %>
-          <div>
-            <label> Ingredient: 
-              <input type="text" name="ingredient" value="<%= element.ingredient %>" />
-            </label>
-            <label> Amount: 
-              <input type="text" name="amount" value="<%= element.amount %>" />
-            </label>
-          </div>    
-      <% }) %> 
-    </div>  
-    
-    <button class="add-ingredient" type="button">Add another ingredient</button>
-  </label>
+ 
+  <div class="add-ingredients">
+    <% cocktail.ingredients.forEach(element => { %>
+        <div>
+          <label> Ingredient: 
+            <input type="text" name="ingredient" value="<%= element.ingredient %>" />
+          </label>
+          <label> Amount: 
+            <input type="text" name="amount" value="<%= element.amount %>" />
+          </label>
+        </div>    
+    <% }) %>  
+  </div> 
+  <button class="add-ingredient" type="button">Add another ingredient</button> 
 
   <label for="steps"> Preparations & Recommendations</label>
     <textarea type="text" name="steps" rows="10"cols="50"><%= cocktail.steps %></textarea>
   
-
   <button type="submit">Update</button>
 </form>
+
 <script src="/js/add-ingredient.js"></script>
 <script src="/js/image-preview.js"></script>
 

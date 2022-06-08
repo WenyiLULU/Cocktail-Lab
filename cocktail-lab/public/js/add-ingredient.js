@@ -8,7 +8,7 @@ addBtn.addEventListener('click', ()=>{
   let newlabel = document. createElement("Label");
   newInput.setAttribute("type","text");
   newInput.setAttribute("name","ingredient");
-  newlabel.innerHTML = "Ingredient "
+  newlabel.innerHTML = "Ingredient: "
   newlabel.appendChild(newInput)
   newInputDiv. appendChild(newlabel);
 
@@ -16,7 +16,7 @@ addBtn.addEventListener('click', ()=>{
   let newlabelAm = document. createElement("Label");
   newInputAm.setAttribute("type","text");
   newInputAm.setAttribute("name","amount");
-  newlabelAm.innerHTML = " Amount "
+  newlabelAm.innerHTML = " Amount: "
   newlabelAm.append(newInputAm)
   newInputDiv. appendChild(newlabelAm);
 

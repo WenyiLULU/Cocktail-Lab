@@ -1,19 +1,23 @@
 <h1>Detail for user</h1> 
-<div class="cocktail-card">
-    <h2><%= name %></h2>
-    <h3><%= category %></h3>
-    <div><img src="<%= image %>" %></div>
-    <ul>
+<div class="wrapper">
+    <div class="cocktail-name">
+        <h2><%= name %></h2>
+        <h3><%= category %></h3>
+    </div>
+    
+    <ul class="cocktail-ingredients">
+        <h5>Ingredients: </h5>
         <% ingredients.forEach(element => { %>
             <li><%= element.ingredient %> : <%= element.amount %> </li>
         <% }) %>
+        <div>
+            <h5>Preparations & Recommendations:</h5>
+            <p><%= steps %> </p>
+        </div>
     </ul>
-    <div>
-        <p><%= steps %> </p>
-    </div>
-
-    <a href="/user/profile">Back</a>
     
+    <div class="picture"><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
 
-
+    <button class="moreInfo-btn"><a href="/user/profile">Back</a></button>
+    
 </div>

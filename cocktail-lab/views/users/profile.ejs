@@ -1,5 +1,4 @@
 
-
 <div class="profile-divs">
   <div class="profile-head">
     <!--<div class="user-img">
@@ -14,19 +13,22 @@
     </div>  
   </div>
 
-  <div class="profile-card">
+  <div class="cocktail-card">
     <h2>Your cocktail recipes:</h2>
-    <div class="profileList">
-        <% cocktailList.forEach(({id, name, image}) => { %>
-            <div>
-                <div><img src="<%= image %> " alt="Cocktail Image" height="100px"></div>
-                <h3><a href="/user/details-private/<%= id %>"><%= name %></a></h3>                    
-            </div>
-            <a href="/user/edit/<%= id %>">Edit</a>
-            <form action="/user/delete/<%= id %>" method="POST">
-              <button type="submit">Delete</button>
-            </form>
-        <% }) %>
+    <div class="profile-list">
+      <% cocktailList.forEach(({id, name, image}) => { %>
+        <div>
+          <div class="polaroid">
+            <div><img src="<%= image %> " alt="Cocktail Image" height="100px" style="width:100%"></div>
+            <div class="container"><a href="/user/details-private/<%= id %>"><%= name %></a></div>
+                                
+          </div>
+          <div><a href="/user/edit/<%= id %>">Edit</a></div>
+          <form action="/user/delete/<%= id %>" method="POST">
+            <button type="submit">Delete</button>
+          </form> 
+        </div> 
+      <% }) %>
     </div>
   </div>
 </div>

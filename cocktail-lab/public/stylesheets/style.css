@@ -1,19 +1,17 @@
 body {
   padding: 0 0 100px 0;
   margin:0;
-  font-family: 'Dekko';
+  font-family: 'Allerta Stencil';
   font-size: 22px;
   background-color: #4BC0C8; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom,#6A82FB,#FC5C7D)
+  background-image: linear-gradient(to bottom,#93C5FD,#701A75)
 }
-
 a {
   color: white;
   text-decoration: none;
 }
-
 h1 {
-  margin-top: 80px;
+  padding-top: 40px;
   color: white;
   text-shadow: 4px 4px #666 ;
 }
@@ -29,7 +27,7 @@ nav div{
   margin: 20px 10px 0 0;
   padding: 0 15px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 nav a{
   text-decoration: none;
@@ -63,14 +61,16 @@ h1{
 
 footer {
   padding-left: 50px;
-  height: 50px;
-  background-color: #6A82FB;
+  height: 70px;
+  background-color: #4a114d;
   color: white;
+  border-radius: 60% 60% 0 0;
   font-size: 20px;
   position: fixed;
   bottom: 0;
   width: 100vw;
   display: flex;
+  justify-content: center;
   align-items: center;
   opacity:0;
 }
@@ -84,7 +84,7 @@ footer:hover{
   justify-content: space-around;
 }
 .cocktail-card{
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
   padding-bottom: 20px;
   border-radius: 10px;
   display: flex;
@@ -109,9 +109,9 @@ footer:hover{
   width: 40vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  
+  grid-gap: 20px; 
 }
+
 .polaroid {
   width: 100%;
   border-radius: 10px;
@@ -134,6 +134,9 @@ footer:hover{
 }
 
 .all-cocktailList{
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 50px;
+  border-radius: 10px;
   margin: 20px auto;
   padding: 20px;
   width: 80vw;
@@ -142,25 +145,110 @@ footer:hover{
   grid-gap: 20px;
 }
 
-.input-form{
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+/*detail page*/
+.wrapper{
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 40px;
+  border-radius: 10px;
+  margin: 100px auto;
   width: 60%;
-  
+  display: grid;
+  grid-template: 5 * 1fr; 
+  gap: 40px;
 }
- 
-.input-form input, select{
+.cocktail-name{
+  grid-column: 1/3;
+  grid-row: 1/2;
+  text-align: center;
+}
+.picture{
+  border-radius: 15px;
+  grid-column: 1/3;
+  grid-row: 2/5;
+}
+.cocktail-ingredients{
+  padding: 10px;
+  grid-column: 4/5;
+  grid-row: 1/4;
+}
+.moreInfo-btn{
+  grid-column: 4/5;
+  grid-row: 4/5;
+  margin-right: 20px;
+  background-color: #4BC0C8;
+  font-size: 20px;
+  color: white;
+  height: 30px;
+  width: 100%;
+  border-radius: 15px;
+}
+/* Login & signup page*/
+.input-page{
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 20px auto 310px auto;
+  width: 35vw;
+}
+.login-form label {
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+} 
+.login-form input,
+.login-form button,
+.input-form button {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 15px;
   outline: 0;
   padding: 4px;
-  width: 50%;
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+.login-form button, 
+.input-form button {
+  background-color: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+} 
+.login-form button,
+.input-form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
+
+/*Create & edit page*/
+.input-form{
+  margin: 30px auto;
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;  
+  background-color: rgba(255, 255, 255, 0.5);
+} 
+.input-form input, select, textarea{
+  box-sizing: border-box;
+  font-size: 15px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
   margin-bottom: 20px;
 }
-.input-form button{
-  width: 200px;
-  margin: 20px 0;
+.add-image:hover{
+  color: #43a3e6;
+  cursor: pointer;
 }
 .add-ingredients input{
   width: 60%
@@ -177,6 +265,7 @@ footer:hover{
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   color: #666;
+  font-size: 15px;
   text-align: center;
 }
 .cocktail-input input,
@@ -186,15 +275,22 @@ footer:hover{
 .cocktail-input label{
   display: block;
 }
+ /*Profile page*/
+ 
 .profile-divs {
   padding: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
-
-.profile-card{
+.profile-list{
+  padding: 20px;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; 
+}
+/*.profile-card{
   border: 2px solid navy;
   border-radius: 10px;
   display: flex;
@@ -206,56 +302,11 @@ footer:hover{
 .profileList {
   padding: 20px;
   width: 28vw;
-  /*height: 400px;*/
+  height: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;  
-  
-}
-.input-page{
-  margin: 0 auto;
-  height: 100vh;
-  width: 35vw;
-}
-.login-form label {
-  color: black;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
-}
- 
-.login-form input,
-.login-form button,
-.input-form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
-  margin-bottom: 20px;
-}
- 
-.login-form button, .input-form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.3s ease background;
-  width: 100%;
-}
- 
-.login-form button,
-.input-form button:hover {
-  background: #fff;
-  color: #43a3e6;
-  transition: 0.3s ease background;
-}
+}*/
 
 .profile-head{
   margin-bottom: 20px;
@@ -268,7 +319,10 @@ footer:hover{
   align-items: flex-start;
 }
 .welcome {
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
+  width: 100%;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -276,4 +330,20 @@ footer:hover{
 }
 .welcome p{
   font-size: 50px;
+  margin: 40px auto 20px auto;
+  text-shadow: 2px 2px #4BC0C8;
+}
+.welcome div{
+  margin: 20px;
+  font-size: 30px;
+
+}
+.welcome button{
+  margin: 30px;
+  background-color: #4BC0C8;
+  font-size: 20px;
+  color: white;
+  height: 30px;
+  width: 50%;
+  border-radius: 15px;
 }
