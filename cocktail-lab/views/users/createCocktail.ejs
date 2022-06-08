@@ -3,17 +3,17 @@
     
     <form class="input-form" action="/user/create-cocktail" method="POST" enctype="multipart/form-data" >
      
-      <label> Name of your Cocktail
+      <label for="name"> Name of your Cocktail</label>
         <input type="text" name="name" placeholder="Please give a nice name for your Cocktail" required/>
-      </label>
+      
 
-      <label> Category
+      <label for="category"> Category</label>
         <select name="category">
             <option value="">--Please choose an option--</option>
             <option value="Alcoholic">Alcoholic</option>
             <option value="Non alcoholic">Non Alcoholic</option>
         </select>
-      </label>
+      
 
       <label> Choose an image to upload
         <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png">
@@ -23,12 +23,14 @@
       </div>
 
       <div class="add-ingredients">  
-          <label> Ingredient
-            <input type="text" name="ingredient" required/>
-          </label>
-          <label> Amount
-            <input type="text" name="amount" required/>
-          </label>
+          <div>
+            <label> Ingredient
+              <input type="text" name="ingredient" required/>
+            </label>
+            <label> Amount
+              <input type="text" name="amount" required/>
+            </label>
+          </div>  
       </div>
       
       <button class="add-ingredient" type="button">Add another ingredient</button>
