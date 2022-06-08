@@ -1,5 +1,5 @@
-const addBtn = document.getElementById('add-ingredient')
-const inputZone = document.getElementById('add-ingredients')
+const addBtn = document.querySelector('.add-ingredient')
+const inputZone = document.querySelector('.add-ingredients')
 
 addBtn.addEventListener('click', ()=>{
   let newInputDiv = document.createElement('Div')

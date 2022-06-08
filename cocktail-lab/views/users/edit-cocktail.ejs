@@ -1,6 +1,6 @@
 <h2>Edit Your Cocktail</h2>
 
-<form action="/user/edit/<%= cocktail.id %>" method="POST">
+<form action="/user/edit/<%= cocktail.id %>" method="POST" enctype="multipart/form-data">
   <label
     >Name:
     <input type="text" name="name" value="<%= cocktail.name %>" />
@@ -8,18 +8,39 @@
 
   <label
     >Category:
-    <input type="text" name="category" value="<%= cocktail.category %>" />
+    <!--<input type="text" name="category" value="<%= cocktail.category %>" />-->
+    <select name="category">
+      <option value="">--Please choose an option--</option>
+      <option value="Alcoholic" <% if (cocktail.category === "Alcoholic") { %>
+       selected
+      <% } %>>Alcoholic</option>
+      <option value="Non alcoholic" <% if (cocktail.category === "Non alcoholic") { %>
+        selected
+       <% } %>>Non Alcoholic</option>
+    </select>
   </label>
+
+  <label> Upload a different image
+    <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png">
+  </label>
+  <div class="preview">
+    <p>Please choose an image</p>
+  </div>
 
   <label
     >Ingredients:
+    <div class="add-ingredients">
       <% cocktail.ingredients.forEach(element => { %>
-        <input type="text" name="ingredient" value="<%= element.ingredient %>" />
-        <input type="text" name="amount" value="<%= element.amount %>" />
+        <label> Ingredient:
+          <input type="text" name="ingredient" value="<%= element.ingredient %>" />
+        </label>
+        <lable>Amount
+          <input type="text" name="amount" value="<%= element.amount %>" />
+        </lable>
       <% }) %> 
+    </div>
+    <button class="add-ingredient" type="button">Add another ingredient</button>
   </label>
-
-
 
   <label
     >Steps:
@@ -28,6 +49,8 @@
 
   <button type="submit">Update</button>
 </form>
+<script src="/js/add-ingredient.js"></script>
+<script src="/js/image-preview.js"></script>
 
 
 

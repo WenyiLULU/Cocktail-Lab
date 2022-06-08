@@ -59,19 +59,46 @@ router.get("/details-private/:id", isLoggedIn, async (req, res) => {
     res.render("users/details-private",{name, category, ingredients, image, steps})
   })
 
-
-
-
 //  Edit cocktail
   router.get('/edit/:id', isLoggedIn, async (req, res) => {
     const cocktail = await Cocktail.findById(req.params.id)
     res.render('users/edit-cocktail', { cocktail })
   })
   
-  router.post('/edit/:id', isLoggedIn, async (req, res) => {
-    await Cocktail.findByIdAndUpdate(req.params.id, req.body)
-    console.log(req.params.id)
+  router.post('/edit/:id', isLoggedIn, fileUploader.single("receta-img"), 
+  async (req, res) => {
     console.log(req.body)
+    const userInSession = req.session.currentUser
+    const {name, category, ingredient, amount, steps} = req.body
+    const imageOld = await Cocktail.findById(req.params.id)
+    const imageOldUrl = imageOld.image
+    let ingredients = [];
+    for(let i=0; i<ingredient.length; i+=1){
+        ingredients.push({ingredient:ingredient[i], amount:amount[i]})
+    }
+    //console.log("new cocktail input ==>>>", {name, category, ingredient, amount, steps}) 
+    if(req.file){
+        const newCocktail = {
+            name,
+            category,
+            author: userInSession._id,
+            ingredients: ingredients,
+            steps,
+            image: req.file.path
+        }
+        await Cocktail.findByIdAndUpdate(req.params.id, newCocktail)
+    }
+    else{const newCocktail = {
+            name,
+            category,
+            author: userInSession._id,
+            ingredients: ingredients,
+            steps,
+            image: imageOldUrl
+        }
+        await Cocktail.findByIdAndUpdate(req.params.id, newCocktail)
+    }
+    
     res.redirect(`/user/details-private/${req.params.id}`)
   })
   
