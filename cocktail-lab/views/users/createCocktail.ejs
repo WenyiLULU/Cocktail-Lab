@@ -1,44 +1,38 @@
 <h1>Create new Cocktail</h1>
-<div id="form" >
-    
+<div id="form" > 
     <form class="input-form" action="/user/create-cocktail" method="POST" enctype="multipart/form-data" >
-     
-      <label for="name"> Name of your Cocktail</label>
+      <label for="name"> Name of your Cocktail: </label>
         <input type="text" name="name" placeholder="Please give a nice name for your Cocktail" required/>
-      
 
-      <label for="category"> Category</label>
+      <label for="category"> Category: </label>
         <select name="category">
-            <option value="">--Please choose an option--</option>
+            <option value="">--Please choose a category--</option>
             <option value="Alcoholic">Alcoholic</option>
             <option value="Non alcoholic">Non Alcoholic</option>
         </select>
       
-
-      <label> Choose an image to upload
-        <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png">
-      </label>
+      <label for="image-uplode" class="add-image"> Choose an image to upload: </label>
+        <input id="image-uplode" type="file" name="receta-img" accept=".jpg, .png" style="display:none;">
+      
       <div class="preview">
         <p>Image preview</p>
       </div>
 
       <div class="add-ingredients">  
           <div>
-            <label> Ingredient
+            <label> Ingredient:
               <input type="text" name="ingredient" required/>
             </label>
-            <label> Amount
+            <label> Amount:
               <input type="text" name="amount" required/>
             </label>
           </div>  
-      </div>
-      
+      </div> 
       <button class="add-ingredient" type="button">Add another ingredient</button>
 
-      <label for="steps"> Preparations & Recommendations</label>
+      <label for="steps"> Preparations & Recommendations: </label>
         <textarea name="steps" rows="10"cols="50" placeholder="Please write your suggestion of preparing and consuming this cocktail. (^_^)"></textarea>
       
-  
       <% if(typeof errorMessage !== 'undefined') { %>
         <p class="error"><%= errorMessage %></p>
       <% } %>
@@ -47,7 +41,7 @@
    
     </form>
     
-  </div>
-  <script src="/js/add-ingredient.js"></script>
-  <script src="/js/image-preview.js"></script>
+</div>
+<script src="/js/add-ingredient.js"></script>
+<script src="/js/image-preview.js"></script>
   

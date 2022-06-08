@@ -1,15 +1,18 @@
 <!--<h1>Detail for public</h1> -->
 <div class="wrapper">
-    <div>
+    <div class="cocktail-name">
         <h2><%= name %></h2>
         <h3><%= category %></h3>
     </div>
     
-    <div><img src="<%= image %>" ></div>
-    <ul>
+    <ul class="cocktail-ingredients">
+        <p>Ingredients: </p>
         <% ingredients.forEach(element => { %>
             <li><%= element.ingredient %> </li>
         <% }) %>
     </ul>
-    <button><a href="/user/details-private/<%= id %>">See more infomation</a></button>
+  
+    <div class="picture"><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
+
+    <button class="moreInfo-btn"><a href="/user/details-private/<%= id %>">See more infomation</a></button>
 </div>
