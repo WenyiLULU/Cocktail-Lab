@@ -1,5 +1,5 @@
 body {
-  padding: 0;
+  padding: 0 0 100px 0;
   margin:0;
   font-family: 'Dekko';
   font-size: 22px;
@@ -56,7 +56,7 @@ h1{
 footer {
   padding-left: 50px;
   height: 50px;
-  background-color: navy;
+  background-color: #421d5a;
   color: white;
   font-size: 20px;
   position: fixed;
@@ -131,7 +131,7 @@ footer {
 }
 
 
-#input-form{
+.input-form{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -139,7 +139,7 @@ footer {
   height: 100vh;
 }
  
-#input-form input, select{
+.input-form input, select{
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -147,14 +147,33 @@ footer {
   width: 50%;
   margin-bottom: 20px;
 }
-#input-form button{
+.input-form button{
   width: 200px;
   margin: 20px 0;
 }
-#add-ingredients input{
+.add-ingredients input{
   width: 40%
 }
-
+.add-ingredients{
+  display: flex;
+  flex-direction: column;
+}
+.edit-ingredients{
+  display: flex;
+  flex-direction: row;
+}
+.preview{
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #666;
+  text-align: center;
+}
+.cocktail-input input,
+.cocktail-input label{
+  width: 100%
+}
+.cocktail-input label{
+  display: block;
+}
 .profile-divs {
   padding: 100px;
   display: flex;
@@ -179,5 +198,45 @@ footer {
   grid-gap: 20px;  
   
 }
-
-
+.input-page{
+  margin: 0 auto;
+  height: 100vh;
+  width: 35vw;
+}
+.login-form label {
+  color: black;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+ 
+.login-form input,
+.login-form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+ 
+.login-form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
+}
+ 
+.login-form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: 0.3s ease background;
+}
