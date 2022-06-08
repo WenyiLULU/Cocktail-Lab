@@ -6,7 +6,7 @@ const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
 
 const fileUploader = require("../config/cloudinary.config")
 
-/* GET home page */
+/* GET profile page */
 router.get("/profile", isLoggedIn, async (req, res, next) => {
     //console.log(req.session.currentUser)
     const userInSession = req.session.currentUser
@@ -60,5 +60,33 @@ router.get("/details-private/:id", isLoggedIn, async (req, res) => {
   })
 
 
-module.exports = router;
 
+
+//  Edit cocktail
+  router.get('/edit/:id', isLoggedIn, async (req, res) => {
+    const cocktail = await Cocktail.findById(req.params.id)
+    res.render('users/edit-cocktail', { cocktail })
+  })
+  
+  router.post('/edit/:id', isLoggedIn, async (req, res) => {
+    await Cocktail.findByIdAndUpdate(req.params.id, req.body)
+    console.log(req.params.id)
+    console.log(req.body)
+    res.redirect(`/user/details-private/${req.params.id}`)
+  })
+  
+
+
+  //  Delete cocktail
+  router.post('/delete/:id', async (req, res) => {
+    try {
+    await Cocktail.findByIdAndDelete(req.params.id)
+    res.redirect('/user/profile')
+    
+  } catch (error) {
+    console.log('Error deleting: ' , error)
+  }
+  });
+
+
+module.exports = router
