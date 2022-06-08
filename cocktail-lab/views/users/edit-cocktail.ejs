@@ -1,6 +1,6 @@
 <h2>Edit Your Cocktail</h2>
 
-<form action="/user/edit/<%= cocktail.id %>" method="POST" enctype="multipart/form-data">
+<form action="/user/edit/<%= cocktail.id %>" method="POST" enctype="multipart/form-data" class="input-form">
   <label
     >Name:
     <input type="text" name="name" value="<%= cocktail.name %>" />
@@ -30,15 +30,17 @@
   <label
     >Ingredients:
     <div class="add-ingredients">
+    
       <% cocktail.ingredients.forEach(element => { %>
-        <label> Ingredient:
-          <input type="text" name="ingredient" value="<%= element.ingredient %>" />
-        </label>
-        <lable>Amount
-          <input type="text" name="amount" value="<%= element.amount %>" />
-        </lable>
+          <label> Ingredient: 
+            <input type="text" name="ingredient" value="<%= element.ingredient %>" />
+          </label>
+          <label> Amount: 
+            <input type="text" name="amount" value="<%= element.amount %>" />
+          </label>
       <% }) %> 
-    </div>
+    </div>  
+    
     <button class="add-ingredient" type="button">Add another ingredient</button>
   </label>
 
