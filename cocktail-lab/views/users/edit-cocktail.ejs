@@ -1,0 +1,33 @@
+<h2>Edit Your Cocktail</h2>
+
+<form action="/user/edit/<%= cocktail.id %>" method="POST">
+  <label
+    >Name:
+    <input type="text" name="name" value="<%= cocktail.name %>" />
+  </label>
+
+  <label
+    >Category:
+    <input type="text" name="category" value="<%= cocktail.category %>" />
+  </label>
+
+  <label
+    >Ingredients:
+      <% cocktail.ingredients.forEach(element => { %>
+        <input type="text" name="ingredient" value="<%= element.ingredient %>" />
+        <input type="text" name="amount" value="<%= element.amount %>" />
+      <% }) %> 
+  </label>
+
+
+
+  <label
+    >Steps:
+    <textarea type="text" name="steps" rows="10"cols="50"><%= cocktail.steps %></textarea>
+  </label>
+
+  <button type="submit">Update</button>
+</form>
+
+
+

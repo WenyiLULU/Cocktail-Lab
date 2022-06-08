@@ -21,6 +21,10 @@
                 <div><img src="<%= image %> " alt="Cocktail Image" height="100px"></div>
                 <h3><a href="/user/details-private/<%= id %>"><%= name %></a></h3>                    
             </div>
+            <a href="/user/edit/<%= id %>">Edit</a>
+            <form action="/user/delete/<%= id %>" method="POST">
+              <button type="submit">Delete</button>
+            </form>
         <% }) %>
     </div>
   </div>
