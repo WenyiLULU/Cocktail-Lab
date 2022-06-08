@@ -1,16 +1,17 @@
-<p>This is your profile page!</p>
 
-<% if(userInSession) { %>
-  <h2>Welcome, <%= userInSession.username %>!</h2>
 
-  <div class="profile-divs">
-  <div class="profile-card">
-    <div class="profileList">
-    <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 400px;"/>
-    </div>
-    <button>
-      <a href="/user/create-cocktail">Create new Cocktail</a>
-    </button>
+<div class="profile-divs">
+  <div class="profile-head">
+    <!--<div class="user-img">
+    <img src="/images/whiskey-sour.PNG" alt="cocktail image" style="width: 150px;"/>
+    </div>-->
+    <div class="welcome">
+      <p>Welcome, <%= userInSession.username %>!</p>
+      <div>This is your profile page!</div>
+      <button>
+        <a href="/user/create-cocktail">Create new Cocktail</a>
+      </button>
+    </div>  
   </div>
 
   <div class="profile-card">
@@ -28,7 +29,7 @@
         <% }) %>
     </div>
   </div>
-
+</div>
  <!-- <div class="profile-card">
     <h2>Your Likes:</h2>
     <div class="profileList">
@@ -38,6 +39,3 @@
 </div>-->
 
 
-<% } else { %>
-  <br><p>You are not logged in, sorry!</p>
-<% } %>
