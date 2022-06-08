@@ -136,7 +136,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 70vw;
-  height: 100vh;
+  /* height: 100vh; */
 }
  
 .input-form input, select{
