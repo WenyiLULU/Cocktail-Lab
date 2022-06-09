@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Cocktail = require("../models/Cocktail.model.js");
 const User = require("../models/User.model.js")
+const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
+
 
 /* GET home page */
 router.get("/", async (req, res, next) => {
@@ -9,7 +11,7 @@ router.get("/", async (req, res, next) => {
   //console.log(cocktailAlcToShow[0].id)
   res.render("index", {cocktailAlcToShow,cocktailNAlcToShow});
 });
-router.get("/details/:id", async (req, res) => {
+router.get("/details/:id", isLoggedOut, async (req, res) => {
   const cocktailOnClick = await Cocktail.findById(req.params.id)
   const {name, category, ingredients, image, id} = cocktailOnClick
   const authorInfo = await cocktailOnClick.populate('author')
