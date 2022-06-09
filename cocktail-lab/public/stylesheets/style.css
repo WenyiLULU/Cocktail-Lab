@@ -135,11 +135,10 @@ footer:hover{
 
 .all-cocktailList{
   background-color: rgba(255, 255, 255, 0.4);
-  padding: 50px;
+  padding: 80px;
   border-radius: 10px;
-  margin: 20px auto;
-  padding: 20px;
-  width: 80vw;
+  margin: 50px auto;
+  width: 70vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
@@ -285,7 +284,7 @@ footer:hover{
 }
 .profile-list{
   padding: 20px;
-  
+  height: 500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px; 
@@ -331,7 +330,7 @@ footer:hover{
 .welcome p{
   font-size: 50px;
   margin: 40px auto 20px auto;
-  text-shadow: 2px 2px #4BC0C8;
+  text-shadow: 2px 2px rgb(175, 175, 2);
 }
 .welcome div{
   margin: 20px;
@@ -346,4 +345,19 @@ footer:hover{
   height: 30px;
   width: 50%;
   border-radius: 15px;
+}
+.btn-sidebyside{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.btn-sidebyside button{
+  font-size: 16px;
+  width:70px;
+  height: 25px;
+  margin: 0 0 15px 0;
+}
+.delete-btn:hover{
+  background-color: #BE123C;
+  cursor: pointer;
 }
