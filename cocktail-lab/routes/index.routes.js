@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Cocktail = require("../models/Cocktail.model.js");
-
+const User = require("../models/User.model.js")
 
 /* GET home page */
 router.get("/", async (req, res, next) => {
@@ -12,7 +12,10 @@ router.get("/", async (req, res, next) => {
 router.get("/details/:id", async (req, res) => {
   const cocktailOnClick = await Cocktail.findById(req.params.id)
   const {name, category, ingredients, image, id} = cocktailOnClick
-  res.render("users/details-public",{name, category, ingredients, image, id})
+  const authorInfo = await cocktailOnClick.populate('author')
+  const authorName = authorInfo.author.username
+  console.log('author find by populate',authorName)
+  res.render("users/details-public",{name, category, ingredients, image, id, authorName})
 })
 router.get("/list/:category", async (req, res) => {
   const categories = ["Non alcoholic", "Alcoholic"]

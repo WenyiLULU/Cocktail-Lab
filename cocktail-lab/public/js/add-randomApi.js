@@ -28,7 +28,7 @@ function getRandomCocktail(n){
                 .create({
                 name: strDrink,
                 category: strAlcoholic,
-                author: ObjectId("62a1ced17226b8783de07f7f"),
+                author: ObjectId("62a1f50fd8e1fa1179d4d10a"),
                 ingredients: ingredients,
                 steps :strInstructions,
                 image : strDrinkThumb
@@ -40,4 +40,4 @@ function getRandomCocktail(n){
         .catch(err => console.log('Error while getting the data: ', err));
     }    
 }
-getRandomCocktail(5)
+getRandomCocktail(6)

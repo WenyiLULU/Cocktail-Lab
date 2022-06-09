@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { ObjectId } = require('bson');
 const mongoose = require('mongoose');
 const Cocktail = require("../../models/Cocktail.model.js");
 
@@ -28,6 +29,7 @@ function getCocktailByName(){
                 .create({
                 name: strDrink,
                 category: strAlcoholic,
+                author: ObjectId("629f3b3e034a59f4836e2c24"),
                 ingredients: ingredients,
                 steps :strInstructions,
                 image : strDrinkThumb
