@@ -56,7 +56,9 @@ router.post("/create-cocktail", isLoggedIn, fileUploader.single("receta-img"),
 router.get("/details-private/:id", isLoggedIn, async (req, res) => {
     const cocktailOnClick = await Cocktail.findById(req.params.id)
     const {name, category, ingredients, image, steps} = cocktailOnClick
-    res.render("users/details-private",{name, category, ingredients, image, steps})
+    const authorInfo = await cocktailOnClick.populate('author')
+    const authorName = authorInfo.author.username
+    res.render("users/details-private",{name, category, ingredients, image, steps,authorName})
   })
 
 //  Edit cocktail

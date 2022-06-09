@@ -6,6 +6,7 @@
     </div>
     
     <ul class="cocktail-ingredients">
+        <p>Author: <%= authorName %> </p>
         <h5>Ingredients: </h5>
         <% ingredients.forEach(element => { %>
             <li><%= element.ingredient %> : <%= element.amount %> </li>
