@@ -14,8 +14,10 @@ router.get("/details/:id", async (req, res) => {
   const {name, category, ingredients, image, id} = cocktailOnClick
   const authorInfo = await cocktailOnClick.populate('author')
   const authorName = authorInfo.author.username
+  const likeArr = cocktailOnClick.like
+  let number = likeArr.length
   console.log('author find by populate',authorName)
-  res.render("users/details-public",{name, category, ingredients, image, id, authorName})
+  res.render("users/details-public",{name, category, ingredients, image, id, authorName, number})
 })
 router.get("/list/:category", async (req, res) => {
   const categories = ["Non alcoholic", "Alcoholic"]

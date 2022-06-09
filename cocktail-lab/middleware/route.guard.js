@@ -6,6 +6,7 @@ const isLoggedIn = (req, res, next) => {
     }
     next();
   };
+  
 // checks if the user logged out
   const isLoggedOut = (req, res, next) => {
     if (req.session.currentUser) {
