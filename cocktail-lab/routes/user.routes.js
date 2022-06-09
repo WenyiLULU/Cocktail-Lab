@@ -12,8 +12,9 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
     //console.log(req.session.currentUser)
     const userInSession = req.session.currentUser
     const cocktailList = await Cocktail.find({author: userInSession._id})
-    //console.log ("cocktails", cocktailList)
-    res.render("users/profile", {userInSession, cocktailList}); 
+    const likedList = await Cocktail.find({like: userInSession._id })
+    //console.log ("cocktails", likedList)
+    res.render("users/profile", {userInSession, cocktailList, likedList}); 
 });
 
 router.get("/create-cocktail", isLoggedIn, 

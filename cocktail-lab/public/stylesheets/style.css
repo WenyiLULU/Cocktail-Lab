@@ -78,7 +78,7 @@ footer:hover{
   opacity:1.0;
 }
 
-#cocktail-poster{
+#cocktail-poster, .profile-poster{
   padding: 30px 50px 80px 50px;
   display: flex;
   justify-content: space-around;
@@ -90,7 +90,7 @@ footer:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .cocktail-card button{
   margin-right: 20px;
@@ -125,7 +125,7 @@ footer:hover{
 .container {
   height: 50px;
   text-align: center;
-  padding: 10px 20px;
+  padding: 10px 20px 0 20px;
   font-size: 15px;
   color: black;
 }
@@ -147,7 +147,7 @@ footer:hover{
 /*detail page*/
 .wrapper{
   background-color: rgba(255, 255, 255, 0.4);
-  padding: 40px;
+  padding: 50px;
   border-radius: 10px;
   margin: 100px auto;
   width: 60%;
@@ -319,7 +319,7 @@ footer:hover{
 }
 .profile-list{
   padding: 20px;
-
+  width: 40vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px; 
@@ -343,7 +343,8 @@ footer:hover{
 }*/
 
 .profile-head{
-  margin-bottom: 20px;
+  margin: 80px auto 20px auto;
+  width: 90%;
   background-image: url("https://res.cloudinary.com/cocktail-lab/image/upload/v1654701350/Cocktail-Lab/drinks1_hqwmmn.jpg");
   background-repeat: no-repeat;
   background-size:  cover;
@@ -381,6 +382,7 @@ footer:hover{
   width: 50%;
   border-radius: 15px;
 }
+
 .btn-sidebyside{
   display: flex;
   justify-content: space-around;
