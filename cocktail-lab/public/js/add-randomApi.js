@@ -40,4 +40,4 @@ function getRandomCocktail(n){
         .catch(err => console.log('Error while getting the data: ', err));
     }    
 }
-getRandomCocktail(5)
+getRandomCocktail(12)
