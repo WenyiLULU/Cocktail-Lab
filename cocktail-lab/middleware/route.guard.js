@@ -10,7 +10,7 @@ const isLoggedIn = (req, res, next) => {
 // checks if the user logged out
   const isLoggedOut = (req, res, next) => {
     if (req.session.currentUser) {
-      return res.redirect('/');
+      return res.redirect(`/user/details-private/${req.params.id}`);
     }
     next();
   };
