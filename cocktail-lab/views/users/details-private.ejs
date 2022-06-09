@@ -17,7 +17,12 @@
         </div>
     </ul>
     
-    <div class="picture"><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
+    <div class="picture">
+        <div><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
+        <form action="/user/like/<%= id %>" method="POST">
+            <button type="submit" class="delete-btn">Like</button>
+        </form>
+    </div>
 
     <button class="moreInfo-btn"><a href="/user/profile">Back to Profile page</a></button>
     
