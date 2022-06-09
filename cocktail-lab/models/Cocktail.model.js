@@ -15,6 +15,7 @@ const cocktailSchema = new Schema(
         enum: ["Alcoholic", "Non alcoholic"]
     },
     author :{ type: Schema.Types.ObjectId, ref: User },
+    like :[{type: Schema.Types.ObjectId, ref: User}],
     ingredients: [{ingredient: {type: String}, amount: {type: String}}],
     steps: {type: String},
     image: {type: String, default: 'https://res.cloudinary.com/cocktail-lab/image/upload/v1654613700/Cocktail-Lab/martini-glass2_ctdpt3.jpg' },

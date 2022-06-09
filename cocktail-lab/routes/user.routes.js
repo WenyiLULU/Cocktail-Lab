@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const mongoose  = require('mongoose');
 
 const Cocktail = require("../models/Cocktail.model.js");
 
@@ -55,10 +56,10 @@ router.post("/create-cocktail", isLoggedIn, fileUploader.single("receta-img"),
 
 router.get("/details-private/:id", isLoggedIn, async (req, res) => {
     const cocktailOnClick = await Cocktail.findById(req.params.id)
-    const {name, category, ingredients, image, steps} = cocktailOnClick
+    const {id, name, category, ingredients, image, steps} = cocktailOnClick
     const authorInfo = await cocktailOnClick.populate('author')
     const authorName = authorInfo.author.username
-    res.render("users/details-private",{name, category, ingredients, image, steps,authorName})
+    res.render("users/details-private",{id, name, category, ingredients, image, steps,authorName})
   })
 
 //  Edit cocktail
@@ -115,6 +116,27 @@ router.get("/details-private/:id", isLoggedIn, async (req, res) => {
   } catch (error) {
     console.log('Error deleting: ' , error)
   }
+  });
+
+  //Like cocktail
+  router.post('/like/:id', isLoggedIn, async (req, res) => {
+    const userInSession = req.session.currentUser
+    const id = req.params.id
+    const userObjectId = mongoose.Types.ObjectId(id)
+    const cocktailOnClick = await  Cocktail.findById(id)
+    const likeArr = cocktailOnClick.like
+    console.log('find like arr', likeArr)
+    if(!likeArr.includes(userObjectId)){
+        try {
+        await Cocktail.updateOne({_id: userObjectId}, {$push: {like: [userObjectId]}})
+        res.redirect(`/user/details-private/${id}`)
+        
+      } catch (error) {
+        console.log('Error deleting: ' , error)
+      }
+
+    }
+    
   });
 
 
