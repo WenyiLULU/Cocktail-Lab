@@ -149,7 +149,7 @@ footer:hover{
   background-color: rgba(255, 255, 255, 0.4);
   padding: 50px;
   border-radius: 10px;
-  margin: 100px auto;
+  margin: 80px auto;
   width: 60%;
   display: grid;
   grid-template: 5 * 1fr; 
@@ -203,7 +203,7 @@ footer:hover{
   font-size: 20px;
   color: white;
   height: 30px;
-  width: 100%;
+  width: 400px;
   border-radius: 15px;
 }
 
@@ -260,6 +260,20 @@ footer:hover{
   background: #fff;
   color: #43a3e6;
   transition: 0.3s ease background;
+}
+.go-signup{
+  background-color: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+  width: 100%;
 }
 
 /*Create & edit page*/
@@ -354,7 +368,7 @@ footer:hover{
   align-items: flex-start;
 }
 .welcome {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   width: 100%;
   border-radius: 20px;
