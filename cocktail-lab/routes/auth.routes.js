@@ -8,7 +8,7 @@ const User= require("../models/User.model.js");
 
 
 // require auth middleware
-const { isLoggedIn, isLoggedOut } = require('../middleware/route.guard.js');
+const { goToProfil } = require('../middleware/route.guard.js');
 
 /* GET signup page */
 router.get("/signup", (req, res) => {
@@ -55,7 +55,7 @@ router.post("/signup", async (req, res) => {
 
 /////// L O G I N ///////
 /* GET login page */
-router.get("/login", (req, res) => {
+router.get("/login", goToProfil, (req, res) => {
   res.render("auth/login");
 });
 // POST login route ==> to process form data

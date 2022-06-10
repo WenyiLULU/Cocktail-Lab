@@ -14,7 +14,14 @@ const isLoggedIn = (req, res, next) => {
     }
     next();
   };
+  const goToProfil = (req, res, next) => {
+    if (req.session.currentUser) {
+      return res.redirect(`/user/profile`);
+    }
+    next();
+  };
   module.exports = {
     isLoggedIn,
-    isLoggedOut
+    isLoggedOut,
+    goToProfil
   };
