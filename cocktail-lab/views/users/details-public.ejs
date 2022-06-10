@@ -1,19 +1,30 @@
-<!--<h1>Detail for public</h1> -->
+<h1>Detail for public</h1> 
 <div class="wrapper">
     <div class="cocktail-name">
         <h2><%= name %></h2>
-        <h3><%= category %></h3>
+        <h3><%= `[ ${category} ]` %></h3>
     </div>
     
-    <ul class="cocktail-ingredients">
-        <p>Author: <%= authorName %> </p>
-        <p>Ingredients: </p>
-        <% ingredients.forEach(element => { %>
-            <li><%= element.ingredient %> </li>
-        <% }) %>
-    </ul>
+    <div class="cocktail-ingredients">
+        <h5>Author: <%= authorName %> </h5>
+        <h5>Ingredients: </h5>
+        <ul>
+            <% ingredients.forEach(element => { %>
+                <li><%= element.ingredient %> </li>
+            <% }) %>
+        </ul>
+        
+    </div>
   
-    <div class="picture"><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
+    <div class="picture">
+        <form action="/user/like/<%= id %>" method="POST">
+            <button type="submit" class="heart">
+                <img src="https://res.cloudinary.com/cocktail-lab/image/upload/v1654789943/Cocktail-Lab/life_heart_idd6lh.png" style="width: 85%; ">
+            </button>
+        </form>
+        <span class="badge"><%= number %>  </span>
+        <img src="<%= image %>" style="width:100%; border-radius: 20px;">
+    </div>
 
     <button class="moreInfo-btn"><a href="/user/details-private/<%= id %>">See more infomation</a></button>
 </div>

@@ -2,28 +2,37 @@
 <div class="wrapper">
     <div class="cocktail-name">
         <h2><%= name %></h2>
-        <h3><%= category %></h3>
+        <h3><%= `[ ${category} ]` %></h3>
     </div>
     
-    <ul class="cocktail-ingredients">
-        <p>Author: <%= authorName %> </p>
+    <div class="cocktail-ingredients">
+        <h5>Author: <%= authorName %> </h5>
         <h5>Ingredients: </h5>
-        <% ingredients.forEach(element => { %>
-            <li><%= element.ingredient %> : <%= element.amount %> </li>
-        <% }) %>
+        <ul>
+            <% ingredients.forEach(element => { %>
+                <li><%= element.ingredient %> : <%= element.amount %> </li>
+            <% }) %>
+        </ul>
+        
         <div>
             <h5>Preparations & Recommendations:</h5>
-            <p><%= steps %> </p>
+            <p style="width: 400px"><%= steps %> </p>
         </div>
-    </ul>
+    </div>
     
     <div class="picture">
-        <div><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
+        
         <form action="/user/like/<%= id %>" method="POST">
-            <button type="submit" class="delete-btn">Like</button>
+            <button type="submit" class="heart">
+                <img src="https://res.cloudinary.com/cocktail-lab/image/upload/v1654789943/Cocktail-Lab/life_heart_idd6lh.png" style="width: 85%; ">
+            </button>
         </form>
+        <span class="badge"><%= number %>  </span>
+
+        <div class="cocktail-pictrue"><img src="<%= image %>" style="width:100%; border-radius: 20px;"></div>
     </div>
 
     <button class="moreInfo-btn"><a href="/user/profile">Back to Profile page</a></button>
     
 </div>
+<script src="/js/heart-btn.js"></script>
