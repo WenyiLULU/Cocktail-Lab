@@ -29,7 +29,7 @@ function getCocktailByName(){
                 .create({
                 name: strDrink,
                 category: strAlcoholic,
-                author: ObjectId("629f3b3e034a59f4836e2c24"),
+                author: ObjectId("62a1fde470f97029b34d6df7"),
                 ingredients: ingredients,
                 steps :strInstructions,
                 image : strDrinkThumb
